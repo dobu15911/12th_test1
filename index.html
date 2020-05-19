@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12th</title>
+    <!-- 제이쿼리-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- 구글웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header id="main_header">
+        <div id="left_logo">
+            <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        </div>
+
+        <nav id="gnb">
+            <ul class="depth1">
+                <li><a href="#">신상품</a>
+                    <ul class="depth2">
+                        <li><a href="#">남성 신상품</a></li>
+                        <li><a href="#">여성 신상품</a></li>
+                        <li><a href="#">키즈 신상품</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">신발</a>
+                    <ul class="depth2">
+                        <li><a href="#">남성 신발</a></li>
+                        <li><a href="#">남성 신발</a></li>
+                        <li><a href="#">키즈 신발</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">의류</a>
+                    <ul class="depth2">
+                        <li><a href="#">남성 상의</a></li>
+                        <li><a href="#">남성 하의</a></li>
+                        <li><a href="#">여성 상의</a></li>
+                        <li><a href="#">여성 하의</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="right_search">
+            <img src="./images/search-24px.svg" alt="search">
+            <form action="search.php" method="POST">
+                <input type="text" placeholder="  검색">
+            </form>
+        </div>
+    </header>
+
+    <div id="visual">
+        <section id="text">
+            <h1>50%</h1>
+            <h2>REVERSE SALE</h2>
+        </section>
+        <video id="bg" src="./images/video_title.mp4" width="1200" autoplay loop>
+        </video>
+        <div id="buy">
+            <h1>50% 할인 구매하기</h1>
+        </div>
+        <nav id="bottom_gnb">
+            <ul>
+                <li><a href="#">매장안내</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </nav>
+        <div id="icon">
+            <ul>
+                <li><img src="./images/instagram.svg" alt="instagram"></li>
+                <li><img src="./images/youtube.svg" alt="youtube"></li>
+                <li><img src="./images/twitter.svg" alt="twitter"></li>
+                <li><img src="./images/facebook.svg" alt="facebook"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            // 2단계 메뉴 닫힘
+            $('#gnb .depth2').hide();
+
+            // hover
+            $('#gnb .depth1 > li').hover(
+                // MOUSEOVER
+                function () {
+                    $(this)
+                        .children('.depth2')
+                        .stop().fadeIn(600);
+                },
+                // MOUSEOUT
+                function () {
+                    $('#gnb .depth2')
+                        .stop()
+                        .fadeOut(600);
+                }
+            );
+        })
+    </script>
+</body>
+
+</html>
